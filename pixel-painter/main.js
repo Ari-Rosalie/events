@@ -7,9 +7,16 @@ for (let i = 0; i < 100; i++) {
     newCell.className = "cell"
     main.appendChild(newCell)
 }
-for(let color of colorPalette){
-    color.addEventListener("click", (e) =>{
-        currentColor
-        e.target.style.background = e.target.style.background
-    })
+
+for (let color of colorPalette) {
+    color.addEventListener("click", (e) => {
+        currentColor.style.background = e.target.style.background;
+    });
+}
+
+const cells = document.querySelectorAll('.cell');
+for (let cell of cells) {
+    cell.addEventListener('click', (e) => {
+        e.target.style.background = currentColor.style.background;
+    });
 }
